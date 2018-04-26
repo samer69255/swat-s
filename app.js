@@ -31,7 +31,7 @@ app.post('/attack',function (req,res ) {
   run = true;
 
 var list = [];
-for (var i = 1; i<41; i++)
+for (var i = 1; i<75; i++)
 {
   list.push('https://swat-'+ i +'.herokuapp.com/');
 }
@@ -39,6 +39,8 @@ for (var i = 1; i<41; i++)
 
 
 });
+
+
 
 app.post('/reg',function (req,res) {
   res.end('saved');

